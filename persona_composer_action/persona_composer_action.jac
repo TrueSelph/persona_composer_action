@@ -1,11 +1,11 @@
-import:py json;
-import:py logging;
-import:py traceback;
-import:py from logging { Logger }
-import:jac from jivas.agent.action.action { Action }
+import json;
+import logging;
+import traceback;
+import from logging { Logger }
+import from jivas.agent.action.action { Action }
 
 
-node PersonaComposerAction :Action: {
+node PersonaComposerAction(Action) {
     # Generates and updates the persona interact action prompt and configurable attributes based on biodata
 
     # set up logger
@@ -95,12 +95,12 @@ node PersonaComposerAction :Action: {
     has attributes:dict = {};
     has persona_prompt:str = "";
 
-    can post_register() {
+    def post_register() {
         # compose if there is biodata
         self.compose(self.biodata);
     }
 
-    can compose(biodata:str, attributes:dict={}) {
+    def compose(biodata:str, attributes:dict={}) {
         # composes the persona prompt based on biodata and updates the action
 
         # quit if biodata is not provided or action is disabled
@@ -148,11 +148,9 @@ node PersonaComposerAction :Action: {
             if( model_action_result := model_action.call_model(
                 prompt_messages = prompt_messages,
                 prompt_variables = prompt_variables,
-                kwargs = {
-                    "model_name": self.model_name,
-                    "model_temperature": self.model_temperature,
-                    "model_max_tokens": self.model_max_tokens
-                }
+                model_name = self.model_name,
+                model_temperature = self.model_temperature,
+                model_max_tokens = self.model_max_tokens,
             )) {
 
                 response = model_action_result.get_json_result();
@@ -180,7 +178,7 @@ node PersonaComposerAction :Action: {
     }
 
 
-    can healthcheck() -> bool {
+    def healthcheck() -> bool {
         try {
             if(
                 self.identity_attrs and

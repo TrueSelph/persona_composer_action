@@ -1,2 +1,4 @@
-include:jac persona_composer_action;
-include:jac compose;
+import from actions.jivas.persona_composer_action {
+    persona_composer_action,
+    compose
+}
