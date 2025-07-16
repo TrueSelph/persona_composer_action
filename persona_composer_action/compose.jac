@@ -1,10 +1,10 @@
 import from jivas.agent.core.agent { Agent }
 import from jivas.agent.action.action { Action }
 import from jivas.agent.action.actions { Actions }
-import from jivas.agent.action.interact_graph_walker { interact_graph_walker }
+import from jivas.agent.action.agent_graph_walker { agent_graph_walker }
 
 
-walker compose(interact_graph_walker) {
+walker compose(agent_graph_walker) {
 
     has biodata:str = "";
     has attributes:dict = {};
