@@ -3,7 +3,7 @@
 from typing import Union
 
 import streamlit as st
-from jvclient.lib.utils import call_action_walker_exec
+from jvclient.lib.utils import call_api
 from jvclient.lib.widgets import app_controls, app_header, app_update_action
 from streamlit_router import StreamlitRouter
 
@@ -61,4 +61,4 @@ def call_compose(
     """
 
     args = {"agent_id": agent_id, "biodata": biodata, "attributes": attributes}
-    return call_action_walker_exec(agent_id, module_root, "compose", args)
+    return call_api(endpoint="action/walker/persona_composer_action/compose", json_data=args)
