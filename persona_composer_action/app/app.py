@@ -61,4 +61,6 @@ def call_compose(
     """
 
     args = {"agent_id": agent_id, "biodata": biodata, "attributes": attributes}
-    return call_api(endpoint="action/walker/persona_composer_action/compose", json_data=args)
+    return call_api(
+        endpoint="action/walker/persona_composer_action/compose", json_data=args
+    )
