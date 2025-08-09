@@ -3,7 +3,7 @@
 from typing import Union
 
 import streamlit as st
-from jvclient.lib.utils import call_api
+from jvclient.lib.utils import call_api, get_reports_payload
 from jvclient.lib.widgets import app_controls, app_header, app_update_action
 from streamlit_router import StreamlitRouter
 
@@ -61,6 +61,11 @@ def call_compose(
     """
 
     args = {"agent_id": agent_id, "biodata": biodata, "attributes": attributes}
-    return call_api(
+    result = call_api(
         endpoint="action/walker/persona_composer_action/compose", json_data=args
     )
+
+    if result and result.status_code == 200:
+        return get_reports_payload(result)
+
+    return {}
