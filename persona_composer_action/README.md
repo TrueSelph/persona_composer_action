@@ -26,12 +26,12 @@ Generates and updates the persona interact action prompt and configurable attrib
 
 ## Dependencies
 
-- **Jivas:** `^2.0.0`
+- **Jivas:** `^2.1.0`
 - **Actions:**
-  - `jivas/langchain_model_action`: `^0.0.1`
-  - `jivas/persona_interact_action`: `^0.0.1`
+  - `jivas/langchain_model_action`: `^0.1.0`
+  - `jivas/persona_interact_action`: `^0.1.0`
 
-This package, developed by V75 Inc., is designed to generate and update prompts and configurable attributes for persona interact actions using user biodata. As a core action, it is essential for dynamically shaping and modifying persona attributes and responses based on user information. It is a singleton and requires the Jivas library version 2.0.0, along with dependencies on the `langchain_model_action` and `persona_interact_action`.
+This package, developed by V75 Inc., is designed to generate and update prompts and configurable attributes for persona interact actions using user biodata. As a core action, it is essential for dynamically shaping and modifying persona attributes and responses based on user information. It is a singleton and requires the Jivas library version 2.1.0, along with dependencies on the `langchain_model_action` and `persona_interact_action`.
 
 ---
 

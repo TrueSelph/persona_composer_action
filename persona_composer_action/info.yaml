@@ -1,8 +1,8 @@
 package:
   name: jivas/persona_composer_action
   author: V75 Inc.
-  architype: PersonaComposerAction
-  version: 0.0.1
+  archetype: PersonaComposerAction
+  version: 0.1.0
   meta:
     title: Persona Composer Action
     description: Generates and updates the persona interact action prompt and configurable attributes based on biodata
@@ -11,9 +11,9 @@ package:
   config:
     singleton: true
   dependencies:
-    jivas: ^2.0.0
+    jivas: ~2.1.0
     actions:
-      jivas/langchain_model_action: ^0.0.1
-      jivas/persona_interact_action: ^0.0.1
+      jivas/langchain_model_action: "~0.1.0"
+      jivas/persona_interact_action: "~0.1.0"
 
 
