@@ -11,7 +11,7 @@ node PersonaComposerAction(Action) {
     # set up logger
     static has logger:Logger = logging.getLogger(__name__);
 
-    has model_action:str = "PersonaComposerAction";
+    has model_action:str = "LangChainModelAction";
     has model_name:str = "gpt-4o";
     has model_temperature:float = 0.5;
     has model_max_tokens:int = 12288;
